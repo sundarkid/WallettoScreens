@@ -49,10 +49,10 @@
 
     <string name="action_logout">Logout</string>
     <string name="item_Name">Chicken Burger</string>
-    <string name="price">Rs.185</string>
+    <string name="price">185</string>
     <string name="quantity">1</string>
-
-
+    <string name="RsSymbol">\u20B9</string>
+    <string name="Rs">\u20A8</string>
 
 
 

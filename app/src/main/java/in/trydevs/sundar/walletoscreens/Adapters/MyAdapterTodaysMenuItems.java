@@ -50,7 +50,7 @@ public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterToda
             holder.image.setImageDrawable(null);
         }
         holder.name.setText(current.getName());
-        holder.price.setText("Rs." + current.getPrice());
+        holder.price.setText(current.getPrice());
     }
 
     @Override
