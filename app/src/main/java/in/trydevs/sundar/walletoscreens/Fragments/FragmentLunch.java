@@ -47,7 +47,7 @@ public class FragmentLunch extends Fragment {
     public List<MenuItem> getMenuItems() {
         List<MenuItem> data = new ArrayList<>();
         data.add(new MenuItem("Chicken Briyani", "230", "http://orsimages.unileversolutions.com/ORS_Images/Knorr_en-IN/Hyderabadi%20Chicken%20Biryani%20%20Recipe%20Knorr%20India_29_3.1.16_326X580.Jpeg"));
-        data.add(new MenuItem("Burger", "190", "http://cocosoutback.com/wp-content/uploads/2014/05/Burgers.jpg"));
+        data.add(new MenuItem("Burger", "190", "http://cocosoutback.com/wp-content/uploads/2014/05/burgers.jpg"));
         data.add(new MenuItem("Nuggets", "100", "http://www.thekidsclubphuket.com/wp-content/uploads/2014/11/nuggets.jpg"));
         return data;
     }

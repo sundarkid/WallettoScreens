@@ -35,4 +35,5 @@
     <color name="navy_blue_dark">#092448</color>
     <color name="navy_blue_light">#000080</color>
     <color name="button_background">#DD003E</color>
+    <color name="text_color_red">#F04E54</color>
 </resources>

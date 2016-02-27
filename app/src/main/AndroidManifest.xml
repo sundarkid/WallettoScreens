@@ -5,8 +5,6 @@
     <!-- Always required on all apis, needed to access the internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-
-
     <application
         android:name=".extras.MyApplication"
         android:allowBackup="true"
@@ -30,7 +28,15 @@
         <activity
             android:name=".Adapters.MyAdapterTodaysMenuItems"
             android:label="@string/title_activity_my_adapter_todays_menu_items"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.ReviewOrder"
+            android:parentActivityName=".Activities.TodaysMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.TodaysMenu" />
+
+        </activity>
     </application>
 
 </manifest>
