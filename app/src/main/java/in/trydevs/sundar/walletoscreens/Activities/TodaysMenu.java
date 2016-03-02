@@ -1,9 +1,11 @@
 package in.trydevs.sundar.walletoscreens.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import in.trydevs.sundar.walletoscreens.Adapters.MyFragmentAdapterTodaysMenu;
 import in.trydevs.sundar.walletoscreens.R;
@@ -25,7 +27,7 @@ public class TodaysMenu extends AppCompatActivity {
 
     }
 
-    private void intialize(){
+    private void intialize() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.top_bar);
         setSupportActionBar(toolbar);
         // Setting up view pager and adapter
@@ -35,6 +37,10 @@ public class TodaysMenu extends AppCompatActivity {
         viewPager.setAdapter(fragmentAdapter);
         slidingTabLayout.setCustomTabView(R.layout.white_tab_color_text, R.id.textView);
         slidingTabLayout.setViewPager(viewPager);
+    }
+
+    public void startActivityReviewOrder(View v) {
+        startActivity(new Intent(this, ReviewOrder.class));
     }
 
 }

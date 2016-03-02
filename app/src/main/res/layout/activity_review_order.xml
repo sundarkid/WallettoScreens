@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="in.trydevs.sundar.walletoscreens.Activities.ReviewOrder">
+
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/top_bar" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="in.trydevs.sundar.walletoscreens.Fragments.ItemsOrdered">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8dp"
+                android:text="Items Ordered"
+                android:textColor="@color/text_color_red"
+                android:textSize="16sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/order_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_8dp"
+                    android:text="Total Amount:"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8dp"
+                    android:singleLine="true"
+                    android:text="₹500"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:padding="@dimen/_8dp"
+                android:text="Have Promo Code?"
+                android:textColor="@color/text_color_red"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/promo_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8dp"
+                    android:layout_weight="1"
+                    android:hint="Enter Code Here"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/apply_promo_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/button_background"
+                    android:text="Apply"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4dp">
+
+        <Button
+            android:id="@+id/place_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/button_background"
+            android:text="Place Order"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>
