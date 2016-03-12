@@ -46,19 +46,38 @@
     <string name="newMessage_broadcast">new_post_broadcast</string>
 
 
+
+
+
+
+
+
+    <!-- Walletto screens -->
+
     <string name="action_logout">Logout</string>
     <string name="item_Name">Chicken Burger</string>
     <string name="price">185</string>
     <string name="quantity">1</string>
     <string name="RsSymbol">\u20B9</string>
     <string name="Rs">\u20A8</string>
+    <string name="meal_detail">Meal Details</string>
+    <string name="action_dialog">Open dialog</string>
+    <string name="address">Address</string>
+    <string name="annaStreet">58/72, Anna Street,</string>
+    <string name="kumarananthapuram">Kumarananthapuam,</string>
+    <string name="tirupur">Tirupur.</string>
+    <string name="locality">Locality</string>
+    <string name="landmark">Landmark</string>
+    <string name="kumarananthapuramTirupur">Kumarananthapuram, Tirupur.</string>
+
+
 
 
     <string name="privacy_and_terms">I Agree to the terms and conditions and privacy statements.</string>
     <string name="contacts_data">Your contact details will not be visible to anyone.</string>
 
     <string name="trydevs_link">http://www.trydevs.in</string>
-    <string name="sundar">Sundareswaran</string>
+    <string name="sundares">Sundareswaran</string>
     <string name="developer">Developer,</string>
     <string name="email">sundareswaran@trydevs.in</string>
     <string name="time">12-2-2015,13:29</string>

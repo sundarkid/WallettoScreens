@@ -1,6 +1,8 @@
 package in.trydevs.sundar.walletoscreens.Adapters;
 
+import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,8 +18,11 @@ import java.util.List;
 
 import in.trydevs.sundar.walletoscreens.DataClasses.MenuItem;
 import in.trydevs.sundar.walletoscreens.R;
+import in.trydevs.sundar.walletoscreens.interfaces.DialogTodaysMenuListener;
 
 public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterTodaysMenuItems.MyViewHolder> {
+
+    private DialogTodaysMenuListener dialogTodaysMenuListener;
 
     FragmentActivity context;
     List<MenuItem> data;
@@ -31,6 +36,10 @@ public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterToda
         Log.d("data 1", data.get(1).getName() + data.get(1).getImage());
     }
 
+    public void setDialogTodaysMenuListener(DialogTodaysMenuListener listener){
+        dialogTodaysMenuListener = listener;
+    }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.custom_row_food_order, parent, false);
@@ -39,7 +48,7 @@ public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterToda
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        MenuItem current = data.get(position);
+        final MenuItem current = data.get(position);
         if (!current.getImage().equals("")) {
             Glide.with(context)
                     .load(current.getImage())
@@ -49,6 +58,12 @@ public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterToda
         } else {
             holder.image.setImageDrawable(null);
         }
+        holder.foodRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogTodaysMenuListener.onDialogCall(current);
+            }
+        });
         holder.name.setText(current.getName());
         holder.price.setText(current.getPrice());
     }
@@ -60,14 +75,23 @@ public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterToda
 
     protected class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, price;
-        ImageView image;
+        TextView name, price, recipe, itemName;
+        ImageView image, foodRecipe;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.imageView);
             name = (TextView) itemView.findViewById(R.id.itemname);
             price = (TextView) itemView.findViewById(R.id.itemprice);
+            foodRecipe = (ImageView) itemView.findViewById(R.id.foodRecipe);
+
+            foodRecipe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                }
+            });
         }
     }
 

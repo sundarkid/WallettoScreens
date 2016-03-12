@@ -36,6 +36,7 @@
             android:textAppearance="?android:textAppearanceLarge" />
 
         <ImageView
+            android:id="@+id/foodRecipe"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -56,11 +57,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:paddingRight="@dimen/_4dp"
-                android:textAppearance="?android:textAppearanceLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/RsSymbol" />
+                android:paddingRight="@dimen/_4dp"
+                android:text="@string/RsSymbol"
+                android:textAppearance="?android:textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/itemprice"
