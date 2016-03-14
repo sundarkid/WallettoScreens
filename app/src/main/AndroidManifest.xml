@@ -35,8 +35,8 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.TodaysMenu" />
-
         </activity>
+        <activity android:name=".Activities.SelectAddress"></activity>
     </application>
 
 </manifest>

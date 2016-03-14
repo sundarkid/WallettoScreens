@@ -1,5 +1,6 @@
 package in.trydevs.sundar.walletoscreens.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -32,15 +33,15 @@ public class ReviewOrder extends AppCompatActivity {
         initialize();
         //Preparing Sample Data
         LinkedList<Order> data = new LinkedList<>();
-        MenuItem item1 = new MenuItem("Chicken Briyani", "230", "http://orsimages.unileversolutions.com/ORS_Images/Knorr_en-IN/Hyderabadi%20Chicken%20Biryani%20%20Recipe%20Knorr%20India_29_3.1.16_326X580.Jpeg","Add fried onions, green chilies, ½ of the mint, coriander leaves and pour in the oil or melted ghee. Mix well and level the surface. Layer the cooked rice evenly, add fried onions, mint and coriander leaves over the chicken. Sprinkle ¼ tsp to ½ tsp. biryani masala powder.");
+        MenuItem item1 = new MenuItem("Chicken Briyani", "230", "http://orsimages.unileversolutions.com/ORS_Images/Knorr_en-IN/Hyderabadi%20Chicken%20Biryani%20%20Recipe%20Knorr%20India_29_3.1.16_326X580.Jpeg", "Add fried onions, green chilies, ½ of the mint, coriander leaves and pour in the oil or melted ghee. Mix well and level the surface. Layer the cooked rice evenly, add fried onions, mint and coriander leaves over the chicken. Sprinkle ¼ tsp to ½ tsp. biryani masala powder.");
         Order order1 = new Order(item1, 2, Order.OrderTime.LUNCH);
         data.add(order1);
 
-        MenuItem item2 = new MenuItem("Burger", "190", "http://cocosoutback.com/wp-content/uploads/2014/05/burgers.jpg","8 cups finely shredded green cabbage, baby arugula, Freshly ground pepper, sweet smoked paprika");
+        MenuItem item2 = new MenuItem("Burger", "190", "http://cocosoutback.com/wp-content/uploads/2014/05/burgers.jpg", "8 cups finely shredded green cabbage, baby arugula, Freshly ground pepper, sweet smoked paprika");
         Order order2 = new Order(item2, 1, Order.OrderTime.BREAKFAST);
         data.add(order2);
 
-        MenuItem item3 = new MenuItem("Nuggets", "100", "http://www.thekidsclubphuket.com/wp-content/uploads/2014/11/nuggets.jpg","3 skinless, boneless chicken breasts, 1 cup Italian seasoned bread crumbs, Parmesan cheese");
+        MenuItem item3 = new MenuItem("Nuggets", "100", "http://www.thekidsclubphuket.com/wp-content/uploads/2014/11/nuggets.jpg", "3 skinless, boneless chicken breasts, 1 cup Italian seasoned bread crumbs, Parmesan cheese");
         Order order3 = new Order(item3, 1, Order.OrderTime.DINNER);
         data.add(order3);
 
@@ -63,14 +64,15 @@ public class ReviewOrder extends AppCompatActivity {
     private void initialize() {
         toolbar = (Toolbar) findViewById(R.id.top_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Review Order");
         placeOrder = (Button) findViewById(R.id.place_order);
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Mechanism to Place Order of Listed items Goes Here
                 Toast.makeText(ReviewOrder.this, "Order has been Placed :-)", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ReviewOrder.this, SelectAddress.class);
+                startActivity(intent);
+
             }
         });
         applyPromoCode = (Button) findViewById(R.id.apply_promo_code);

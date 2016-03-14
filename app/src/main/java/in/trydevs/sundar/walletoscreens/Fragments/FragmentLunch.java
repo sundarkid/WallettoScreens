@@ -1,6 +1,7 @@
 package in.trydevs.sundar.walletoscreens.Fragments;
 
-import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class FragmentLunch extends Fragment {
     RecyclerView recyclerView;
     View view;
     TextView recipe, itemName;
+    Button ok;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,27 +54,28 @@ public class FragmentLunch extends Fragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         dialogView = inflater.inflate(R.layout.custom_dialog_item_recipie, null);
+
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setView(dialogView);
+        final AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         adapter.setDialogTodaysMenuListener(new DialogTodaysMenuListener() {
             @Override
             public void onDialogCall(MenuItem menuItem) {
 
-                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
-                 dialogBuilder.setView(dialogView);
+                recipe = (TextView) dialogView.findViewById(R.id.foodRecipe);
+                itemName = (TextView) dialogView.findViewById(R.id.item_name);
+                ok = (Button) dialogView.findViewById(R.id.btn_ok);
+                recipe.setText(menuItem.getRecipe());
+                itemName.setText(menuItem.getName());
 
-                 recipe = (TextView) dialogView.findViewById(R.id.foodRecipe);
-                 itemName = (TextView) dialogView.findViewById(R.id.item_name);
+                // dialogBuilder.setTitle(menuItem.getName()).setMessage(menuItem.getRecipe());
 
-                 recipe.setText(menuItem.getRecipe());
-                 itemName.setText(menuItem.getName());
-
-               // dialogBuilder.setTitle(menuItem.getName()).setMessage(menuItem.getRecipe());
-
-                final AlertDialog alertDialog = dialogBuilder.create();
-                dialogBuilder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                ok.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+                    public void onClick(View v) {
                         alertDialog.dismiss();
+                        alertDialog.cancel();
                     }
                 });
                 alertDialog.show();
@@ -81,6 +85,7 @@ public class FragmentLunch extends Fragment {
         //recyclerView.addItemDecoration(new SpacesItemDecoration(5));
         recyclerView.setAdapter(adapter);
     }
+
 
     public List<MenuItem> getMenuItems() {
         List<MenuItem> data = new ArrayList<>();

@@ -46,12 +46,6 @@
     <string name="newMessage_broadcast">new_post_broadcast</string>
 
 
-
-
-
-
-
-
     <!-- Walletto screens -->
 
     <string name="action_logout">Logout</string>
@@ -69,8 +63,10 @@
     <string name="locality">Locality</string>
     <string name="landmark">Landmark</string>
     <string name="kumarananthapuramTirupur">Kumarananthapuram, Tirupur.</string>
-
-
+    <string name="ok">OK</string>
+    <string name="chooseaddress">Choose Address</string>
+    <string name="addnew">Add New</string>
+    <string name="addnewaddress">  + Add New Address</string>
 
 
     <string name="privacy_and_terms">I Agree to the terms and conditions and privacy statements.</string>

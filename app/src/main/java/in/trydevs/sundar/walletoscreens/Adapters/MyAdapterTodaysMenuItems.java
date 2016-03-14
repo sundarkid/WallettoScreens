@@ -1,8 +1,6 @@
 package in.trydevs.sundar.walletoscreens.Adapters;
 
-import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,11 +20,10 @@ import in.trydevs.sundar.walletoscreens.interfaces.DialogTodaysMenuListener;
 
 public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterTodaysMenuItems.MyViewHolder> {
 
-    private DialogTodaysMenuListener dialogTodaysMenuListener;
-
     FragmentActivity context;
     List<MenuItem> data;
     LayoutInflater inflater;
+    private DialogTodaysMenuListener dialogTodaysMenuListener;
 
     public MyAdapterTodaysMenuItems(FragmentActivity context, List<MenuItem> data) {
         inflater = LayoutInflater.from(context);
@@ -84,14 +81,6 @@ public class MyAdapterTodaysMenuItems extends RecyclerView.Adapter<MyAdapterToda
             name = (TextView) itemView.findViewById(R.id.itemname);
             price = (TextView) itemView.findViewById(R.id.itemprice);
             foodRecipe = (ImageView) itemView.findViewById(R.id.foodRecipe);
-
-            foodRecipe.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                }
-            });
         }
     }
 
